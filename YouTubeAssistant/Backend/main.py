@@ -58,7 +58,7 @@ def wild_card_search(item:Item,status_code=status.HTTP_200_OK):
 @app.get("/youtubeassist/wild_card/{video_id}/{query}")
 def wild_card(video_id: str, query: str, status_code=status.HTTP_200_OK):
     obj = spy(video_id)
-    k = obj.generate_df()
+    obj.generate_df()
     m = obj.wildcard_search(query)
     return m
 
@@ -66,7 +66,7 @@ def wild_card(video_id: str, query: str, status_code=status.HTTP_200_OK):
 @app.post("/youtubeassist/search_by_ents")
 def search_by_ents(ents: Ents):
     obj = spy(ents.video_id)
-    k = obj.generate_df()
+    obj.generate_df()
     m = obj.search_by_ents(ents.query)
     return m
 
